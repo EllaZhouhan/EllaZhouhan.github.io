@@ -87,17 +87,16 @@
 <meta property="og:description" content="本文对论文Inferring Networks of Substitutable and Complementary Products进行了总结，图片来源于原文，帮助读者理解，有争议的请联系我。论文的作者是Julian McAuley、Rahul Pandey和Jure Leskovec，2015年发表于KDD。本文主要将从写作动机（why）、主要思路（what）、模型构建（how）和贡献四个方面">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/02/14/essay1/图片%201.png">
-<meta property="og:image" content="http://yoursite.com/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片%201.png">
-<meta property="og:image" content="http://yoursite.com/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片%202.png">
-<meta property="og:image" content="http://yoursite.com/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片%203.png">
-<meta property="og:image" content="http://yoursite.com/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片%204.png">
-<meta property="og:image" content="http://yoursite.com/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片%205.png">
-<meta property="og:image" content="http://yoursite.com/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片%206.png">
-<meta property="og:image" content="http://yoursite.com/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片%207.png">
-<meta property="og:image" content="http://yoursite.com/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片%209.png">
-<meta property="og:image" content="http://yoursite.com/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片%208.png">
-<meta property="og:image" content="http://yoursite.com/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片%2010.png">
-<meta property="og:updated_time" content="2018-02-15T05:42:47.000Z">
+<meta property="og:image" content="http://yoursite.com/2018/02/14/essay1/图片%202.png">
+<meta property="og:image" content="http://yoursite.com/2018/02/14/essay1/图片%203.png">
+<meta property="og:image" content="http://yoursite.com/2018/02/14/essay1/图片%204.png">
+<meta property="og:image" content="http://yoursite.com/2018/02/14/essay1/图片%205.png">
+<meta property="og:image" content="http://yoursite.com/2018/02/14/essay1/图片%206.png">
+<meta property="og:image" content="http://yoursite.com/2018/02/14/essay1/图片%207.png">
+<meta property="og:image" content="http://yoursite.com/2018/02/14/essay1/图片%209.png">
+<meta property="og:image" content="http://yoursite.com/2018/02/14/essay1/图片%208.png">
+<meta property="og:image" content="http://yoursite.com/2018/02/14/essay1/图片%2010.png">
+<meta property="og:updated_time" content="2018-02-15T06:00:26.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="论文阅读总结：Inferring Networks of Substitutable and Complementary Products">
 <meta name="twitter:description" content="本文对论文Inferring Networks of Substitutable and Complementary Products进行了总结，图片来源于原文，帮助读者理解，有争议的请联系我。论文的作者是Julian McAuley、Rahul Pandey和Jure Leskovec，2015年发表于KDD。本文主要将从写作动机（why）、主要思路（what）、模型构建（how）和贡献四个方面">
@@ -314,10 +313,9 @@
         <p>本文对论文<em>Inferring Networks of Substitutable and Complementary Products</em>进行了总结，图片来源于原文，帮助读者理解，有争议的请联系我。论文的作者是Julian McAuley、Rahul Pandey和Jure Leskovec，2015年发表于KDD。本文主要将从<strong>写作动机</strong>（why）、<strong>主要思路</strong>（what）、<strong>模型构建</strong>（how）和<strong>贡献</strong>四个方面来进行总结。</p>
 <p>不知大家是否有这种感觉，当购买了一个商品，电商网站会一直为我们推送与其相似的产品，让人不胜其烦。实际上，当用户购买了一个商品之后，往往不再需要相似商品的推荐。该论文提出构建替代和互补商品关系网络，可以实现互补品和替代品推荐，而非仅单一推荐替代品。        </p>
 <h4 id="写作动机"><a href="#写作动机" class="headerlink" title="写作动机"></a>写作动机</h4><p><img src="图片 1.png" alt=""></p>
-<p><img src="/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片 1.png" alt="图片 1"></p>
-<p><img src="/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片 2.png" alt="图片 2"></p>
+<p><img src="图片 2.png" alt=""></p>
 <p>如上图所示，商品之间有互补品和替代品两种关系，而相关的两种商品又有品质的优劣之分，将商品之间的关系进行刻画，可以有效的应用于推荐之中。最终效果图如下图</p>
-<p><img src="/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片 3.png" alt="图片 3"></p>
+<p><img src="图片 3.png" alt=""></p>
 <h4 id="主要思路"><a href="#主要思路" class="headerlink" title="主要思路"></a>主要思路</h4><ul>
 <li>商品向量表示：利用主题模型—&gt; 从文本中识别出有用的产品特征，将每一个产品 $i$ 用向量 $\theta_i$ 表示出来（使用的文本数据为产品评论）</li>
 <li>链路预测，预测产品间是否有连边及连边的方向</li>
@@ -336,17 +334,17 @@
 <p>特征向量    $\psi<em>\theta(i,j)=(1,\theta</em>{i,1}\cdot\theta<em>{j,1},\theta</em>{i,2}\cdot\theta<em>{j,2},\ldots,\theta</em>{i,K}\cdot\theta_{j,K})$</p>
 <p>logistic函数   $F_\beta(\theta<em>d)=\sigma(\langle\beta,\psi</em>\theta(i,j)\rangle)$</p>
 <p>目标函数    </p>
-<p><img src="/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片 4.png" alt="图片 4"></p>
+<p><img src="图片 4.png" alt=""></p>
 <p>其中$\beta$决定要判断产品相关，哪些主题应该相似</p>
 <p>‘we are related because we shared these features’，从特征向量可以看到，如果对应主题相同，那么向量元素相乘不为0，如果主题不同，那么相乘为0。有相似主题向量的产品较为可能相连。</p>
 <ul>
 <li><strong>然后判断边的方向，即相关产品品质的优劣</strong></li>
 </ul>
-<p><img src="/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片 5.png" alt="图片 5"></p>
+<p><img src="图片 5.png" alt=""></p>
 <p>特征向量   $\psi<em>\theta(i,j)=(1,\theta</em>{j,1}-\theta<em>{i,1},\ldots,\theta</em>{j,K}-\theta_{i,K})$</p>
 <p>logistic函数  $F<em>\eta(\psi</em>\theta(i,j))$</p>
 <p>目标函数 </p>
-<p><img src="/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片 6.png" alt="图片 6"></p>
+<p><img src="图片 6.png" alt=""></p>
 <p>这里特征向量表示的是两个商品主题向量的差异</p>
 <p>例如：如果y是一个和x相似的商品，且比x价格低，评分高，那么y就是x一个很好的替代品，但是x是y的一个很差的替代品。同理，对互补品来说，以电池与电视举例，电池可能是电视的一个很好的互补品，但向购买电池的人推荐电视就没多大意义了</p>
 <h5 id="learning-multiple-graphs"><a href="#learning-multiple-graphs" class="headerlink" title="learning multiple graphs"></a>learning multiple graphs</h5><p><strong>四类图</strong></p>
@@ -358,18 +356,18 @@
 </ol>
 <p>其中1.2两类图体现的是替代关系，3.4两类图体现的是互补关系</p>
 <p>目标函数</p>
-<p><img src="/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片 7.png" alt="图片 7"></p>
+<p><img src="图片 7.png" alt=""></p>
 <p>其中$g\in G$表明这是属于一类图</p>
 <p>可以同时预测多种类型</p>
 <h5 id="Sparse-topic"><a href="#Sparse-topic" class="headerlink" title="Sparse topic"></a>Sparse topic</h5><p>实际训练中，不可能每个产品都训练有成百个话题的模型，实际上，只需要从一部分话题中选取，如下图所示</p>
-<p><img src="/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片 9.png" alt="图片 9"></p>
+<p><img src="图片 9.png" alt=""></p>
 <p>文中的做法是</p>
 <ul>
 <li>每当观察到节点拥有例如千个实例，就将对应的主题与节点关联</li>
-<li>如果一个产品在类型树的一条路径上，那么它只选取和这条路径上节点相关的topic<img src="/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片 8.png" alt="图片 8"></li>
+<li>如果一个产品在类型树的一条路径上，那么它只选取和这条路径上节点相关的topic<img src="图片 8.png" alt=""></li>
 </ul>
 <p>#####训练结果</p>
-<p><img src="/Users/EllaZhouhan/EllaZhouhan.github.io/source/_posts/essay1/图片 10.png" alt="图片 10"></p>
+<p><img src="图片 10.png" alt=""></p>
 <h4 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h4><p>本文认为该论文为推荐研究提供了新的思路，对用户购物行为进行细粒度的划分，考虑到了浏览、购买等不同情形，同时将产品的优劣考虑进来，进行了较为全面的模型构建，具有启发作用。</p>
 
       
@@ -725,6 +723,28 @@
   
 
   
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
 
   
 
