@@ -96,7 +96,7 @@
 <meta property="og:image" content="http://yoursite.com/2018/02/14/essay1/图片%209.png">
 <meta property="og:image" content="http://yoursite.com/2018/02/14/essay1/图片%208.png">
 <meta property="og:image" content="http://yoursite.com/2018/02/14/essay1/图片%2010.png">
-<meta property="og:updated_time" content="2018-02-15T06:17:07.000Z">
+<meta property="og:updated_time" content="2018-02-15T06:19:03.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="论文阅读总结：Inferring Networks of Substitutable and Complementary Products">
 <meta name="twitter:description" content="本文对论文Inferring Networks of Substitutable and Complementary Products进行了总结，图片来源于原文，帮助读者理解，有争议的请联系我。论文的作者是Julian McAuley、Rahul Pandey和Jure Leskovec，2015年发表于KDD。本文主要将从写作动机（why）、主要思路（what）、模型构建（how）和贡献四个方面">
@@ -331,8 +331,8 @@
 <ul>
 <li><strong>首先判断是否有连边，即判断商品之间是否存在互补或替代关系</strong></li>
 </ul>
-<p>特征向量    $$\psi<em>\theta(i,j)=(1,\theta</em>{i,1}\cdot\theta<em>{j,1},\theta</em>{i,2}\cdot\theta<em>{j,2},\ldots,\theta</em>{i,K}\cdot\theta_{j,K})$$</p>
-<p>logistic函数   $$F_\beta(\theta<em>d)=\sigma(\langle\beta,\psi</em>\theta(i,j)\rangle)$$</p>
+<p>特征向量<br>$$\psi<em>\theta(i,j)=(1,\theta</em>{i,1}\cdot\theta<em>{j,1},\theta</em>{i,2}\cdot\theta<em>{j,2},\ldots,\theta</em>{i,K}\cdot\theta_{j,K})$$</p>
+<p>logistic函数<br>$$F_\beta(\theta<em>d)=\sigma(\langle\beta,\psi</em>\theta(i,j)\rangle)$$</p>
 <p>目标函数    </p>
 <p><img src="图片 4.png" alt=""></p>
 <p>其中$\beta$决定要判断产品相关，哪些主题应该相似</p>
@@ -341,8 +341,8 @@
 <li><strong>然后判断边的方向，即相关产品品质的优劣</strong></li>
 </ul>
 <p><img src="图片 5.png" alt=""></p>
-<p>特征向量   $$\psi<em>\theta(i,j)=(1,\theta</em>{j,1}-\theta<em>{i,1},\ldots,\theta</em>{j,K}-\theta_{i,K})$$</p>
-<p>logistic函数  $$F<em>\eta(\psi</em>\theta(i,j))$$</p>
+<p>特征向量<br>$$\psi<em>\theta(i,j)=(1,\theta</em>{j,1}-\theta<em>{i,1},\ldots,\theta</em>{j,K}-\theta_{i,K})$$</p>
+<p>logistic函数<br>$$F<em>\eta(\psi</em>\theta(i,j))$$</p>
 <p>目标函数 </p>
 <p><img src="图片 6.png" alt=""></p>
 <p>这里特征向量表示的是两个商品主题向量的差异</p>
