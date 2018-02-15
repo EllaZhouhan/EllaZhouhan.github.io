@@ -441,8 +441,8 @@
 <ul>
 <li><strong>首先判断是否有连边，即判断商品之间是否存在互补或替代关系</strong></li>
 </ul>
-<p>特征向量    $\psi<em>\theta(i,j)=(1,\theta</em>{i,1}\cdot\theta<em>{j,1},\theta</em>{i,2}\cdot\theta<em>{j,2},\ldots,\theta</em>{i,K}\cdot\theta_{j,K})$</p>
-<p>logistic函数   $F_\beta(\theta<em>d)=\sigma(\langle\beta,\psi</em>\theta(i,j)\rangle)$</p>
+<p>特征向量    $$\psi<em>\theta(i,j)=(1,\theta</em>{i,1}\cdot\theta<em>{j,1},\theta</em>{i,2}\cdot\theta<em>{j,2},\ldots,\theta</em>{i,K}\cdot\theta_{j,K})$$</p>
+<p>logistic函数   $$F_\beta(\theta<em>d)=\sigma(\langle\beta,\psi</em>\theta(i,j)\rangle)$$</p>
 <p>目标函数    </p>
 <p><img src="图片 4.png" alt=""></p>
 <p>其中$\beta$决定要判断产品相关，哪些主题应该相似</p>
@@ -451,8 +451,8 @@
 <li><strong>然后判断边的方向，即相关产品品质的优劣</strong></li>
 </ul>
 <p><img src="图片 5.png" alt=""></p>
-<p>特征向量   $\psi<em>\theta(i,j)=(1,\theta</em>{j,1}-\theta<em>{i,1},\ldots,\theta</em>{j,K}-\theta_{i,K})$</p>
-<p>logistic函数  $F<em>\eta(\psi</em>\theta(i,j))$</p>
+<p>特征向量   $$\psi<em>\theta(i,j)=(1,\theta</em>{j,1}-\theta<em>{i,1},\ldots,\theta</em>{j,K}-\theta_{i,K})$$</p>
+<p>logistic函数  $$F<em>\eta(\psi</em>\theta(i,j))$$</p>
 <p>目标函数 </p>
 <p><img src="图片 6.png" alt=""></p>
 <p>这里特征向量表示的是两个商品主题向量的差异</p>
@@ -476,8 +476,7 @@
 <li>每当观察到节点拥有例如千个实例，就将对应的主题与节点关联</li>
 <li>如果一个产品在类型树的一条路径上，那么它只选取和这条路径上节点相关的topic<img src="图片 8.png" alt=""></li>
 </ul>
-<p>#####训练结果</p>
-<p><img src="图片 10.png" alt=""></p>
+<h5 id="训练结果"><a href="#训练结果" class="headerlink" title="训练结果"></a>训练结果</h5><p><img src="图片 10.png" alt=""></p>
 <h4 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h4><p>本文认为该论文为推荐研究提供了新的思路，对用户购物行为进行细粒度的划分，考虑到了浏览、购买等不同情形，同时将产品的优劣考虑进来，进行了较为全面的模型构建，具有启发作用。</p>
 
           
